@@ -92,8 +92,7 @@ public class layout_select_tknh_viettinbank extends FragmentActivity  {
                     }
                 }
             } while (smsInboxCursor.moveToNext());
-        }
-        else {
+        } else {
             int GET_MY_PERMISSION = 1;
             if(ContextCompat.checkSelfPermission(this,Manifest.permission.READ_SMS)
                     != PackageManager.PERMISSION_GRANTED){
@@ -101,7 +100,6 @@ public class layout_select_tknh_viettinbank extends FragmentActivity  {
                         Manifest.permission.READ_SMS)){
                 }
                 else{
-
                     ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_SMS},GET_MY_PERMISSION);
                 }
             }

@@ -85,7 +85,7 @@ public class layout_select_tknh_vietcombank extends FragmentActivity  {
                             String formattedDate = new SimpleDateFormat("yyyy-MM-dd").format(date0);
                             bankView.setBankDate(formattedDate);
                             bankView.setBankLydo(str.substring(str.indexOf("Ref")));
-                            bankControl.CapnhatkViecom(bankView);
+                            bankControl.CapnhatkVietcom(bankView);
                             bankControl.close();
                         }
                         bankControl.close();
@@ -196,7 +196,7 @@ public class layout_select_tknh_vietcombank extends FragmentActivity  {
                                 String formattedDate = new SimpleDateFormat("yyyy-MM-dd").format(date0);
                                 bankView.setBankDate(formattedDate);
                                 bankView.setBankLydo(str.substring(str.indexOf("REF")));
-                                bankControl.CapnhatkViecom(bankView);
+                                bankControl.CapnhatkVietcom(bankView);
                                 bankControl.close();
                             }
                             bankControl.close();

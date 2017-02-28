@@ -13,10 +13,10 @@ public class BankView {
     }
 
     int id;
+    int bankTienbt;
     String bankNametk;
     String bankTien;
     String bankDate;
-    int bankTienbt;
     String bankLydo;
     String bankSotk;
     String idsms;

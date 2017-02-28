@@ -25,38 +25,40 @@ public class BankControl {
 
     public  void CapnhatkVietin(BankView bankView){
         ContentValues contentValues = new ContentValues();
-        contentValues.put(ThuChi.table_STK, bankView.getBankSotk().toString());
-        contentValues.put(ThuChi.table_tien,bankView.getBankTien().toString());
-        contentValues.put(ThuChi.table_tienbienthien, bankView.getBankTienbt());
-        contentValues.put(ThuChi.table_id_messger, bankView.getIdsms().toString());
-        contentValues.put(ThuChi.table_ngay, bankView.getBankDate().toString());
-        contentValues.put(ThuChi.table_lydo, bankView.getBankLydo().toString());
-        contentValues.put(ThuChi.table_type, bankView.getType().toString());
-        sqLiteDatabase.insert(ThuChi.TABLE_Vietinbank,null,contentValues);
+        contentValues.put(ThuChi.TABLE_STK, bankView.getBankSotk().toString());
+        contentValues.put(ThuChi.TABLE_TIEN,bankView.getBankTien().toString());
+        contentValues.put(ThuChi.TABLE_TIENBIENTHIEN, bankView.getBankTienbt());
+        contentValues.put(ThuChi.TABLE_ID_MESSGER, bankView.getIdsms().toString());
+        contentValues.put(ThuChi.TABLE_NGAY4, bankView.getBankDate().toString());
+        contentValues.put(ThuChi.TABLE_LYDO, bankView.getBankLydo().toString());
+        contentValues.put(ThuChi.TABLE_TYPE, bankView.getType().toString());
+        contentValues.put(ThuChi.TABLE_TYPE_BANK,"VIETIN");
+        sqLiteDatabase.insert(ThuChi.DB_BANK,null,contentValues);
 
     }
-    public  void CapnhatkViecom(BankView bankView){
+    public  void CapnhatkVietcom(BankView bankView){
         ContentValues contentValues = new ContentValues();
-        contentValues.put(ThuChi.table_STK0, bankView.getBankSotk().toString());
-        contentValues.put(ThuChi.table_tien0,bankView.getBankTien().toString());
-        contentValues.put(ThuChi.table_tienbienthien0, bankView.getBankTienbt());
-        contentValues.put(ThuChi.table_id_messger0, bankView.getIdsms().toString());
-        contentValues.put(ThuChi.table_ngay0, bankView.getBankDate().toString());
-        contentValues.put(ThuChi.table_lydo0, bankView.getBankLydo().toString());
-        contentValues.put(ThuChi.table_type0, bankView.getType().toString());
-        sqLiteDatabase.insert(ThuChi.TABLE_Viecombank,null,contentValues);
+        contentValues.put(ThuChi.TABLE_STK, bankView.getBankSotk().toString());
+        contentValues.put(ThuChi.TABLE_TIEN,bankView.getBankTien().toString());
+        contentValues.put(ThuChi.TABLE_TIENBIENTHIEN, bankView.getBankTienbt());
+        contentValues.put(ThuChi.TABLE_ID_MESSGER, bankView.getIdsms().toString());
+        contentValues.put(ThuChi.TABLE_NGAY4, bankView.getBankDate().toString());
+        contentValues.put(ThuChi.TABLE_LYDO, bankView.getBankLydo().toString());
+        contentValues.put(ThuChi.TABLE_TYPE, bankView.getType().toString());
+        contentValues.put(ThuChi.TABLE_TYPE_BANK,"VIETCOM");
+        sqLiteDatabase.insert(ThuChi.DB_BANK,null,contentValues);
 
     }
     public List<BankView> laydsbank(String stk){
         List<BankView> dsnv = new ArrayList<BankView>();
-        String b = "select * from "+ ThuChi.TABLE_Vietinbank +" where "+ ThuChi.table_STK +" = '"+ stk +"';";
+        String b = "select * from "+ ThuChi.DB_BANK + " WHERE ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN' ) AND ("+ ThuChi.TABLE_STK +" = '"+ stk+"');";
         Cursor cusor = sqLiteDatabase.rawQuery(b,null);
         cusor.moveToFirst();
         while(!cusor.isAfterLast()){
-            String tien = cusor.getString(cusor.getColumnIndex(ThuChi.table_tien));
-            String lydo = cusor.getString(cusor.getColumnIndex(ThuChi.table_lydo));
-            String tienbienthien = cusor.getString(cusor.getColumnIndex(ThuChi.table_tienbienthien));
-            String ngaythang = cusor.getString(cusor.getColumnIndex(ThuChi.table_ngay));
+            String tien = cusor.getString(cusor.getColumnIndex(ThuChi.TABLE_TIEN));
+            String lydo = cusor.getString(cusor.getColumnIndex(ThuChi.TABLE_LYDO));
+            String tienbienthien = cusor.getString(cusor.getColumnIndex(ThuChi.TABLE_TIENBIENTHIEN));
+            String ngaythang = cusor.getString(cusor.getColumnIndex(ThuChi.TABLE_NGAY4));
 
             BankView bankView = new BankView();
             bankView.setBankDate(ngaythang);
@@ -72,14 +74,14 @@ public class BankControl {
 
     public List<BankView> laydsbank_vietcom(String stk){
         List<BankView> dsnv = new ArrayList<BankView>();
-        String b = "select * from "+ ThuChi.TABLE_Viecombank +" where "+ ThuChi.table_STK0 +" = '"+ stk +"';";
+        String b = "select * from "+ ThuChi.DB_BANK + " WHERE ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETCOM' ) AND ("+ ThuChi.TABLE_STK +" = '"+ stk+"');";
         Cursor cusor = sqLiteDatabase.rawQuery(b,null);
         cusor.moveToFirst();
         while(!cusor.isAfterLast()){
-            String tien = cusor.getString(cusor.getColumnIndex(ThuChi.table_tien0));
-            String lydo = cusor.getString(cusor.getColumnIndex(ThuChi.table_lydo0));
-            String tienbienthien = cusor.getString(cusor.getColumnIndex(ThuChi.table_tienbienthien0));
-            String ngaythang = cusor.getString(cusor.getColumnIndex(ThuChi.table_ngay0));
+            String tien = cusor.getString(cusor.getColumnIndex(ThuChi.TABLE_TIEN));
+            String lydo = cusor.getString(cusor.getColumnIndex(ThuChi.TABLE_LYDO));
+            String tienbienthien = cusor.getString(cusor.getColumnIndex(ThuChi.TABLE_TIENBIENTHIEN));
+            String ngaythang = cusor.getString(cusor.getColumnIndex(ThuChi.TABLE_NGAY4));
 
             BankView bankView = new BankView();
             bankView.setBankDate(ngaythang);
@@ -95,11 +97,11 @@ public class BankControl {
 
     public ArrayList<String> laystk_vietin(){
         ArrayList<String> dsnv = new ArrayList<String>();
-        String a = "select "+ ThuChi.table_STK +" from "+ ThuChi.TABLE_Vietinbank;
+        String a = "select "+ ThuChi.TABLE_STK +" from "+ ThuChi.DB_BANK + " WHERE "+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN';";
         Cursor cusor = sqLiteDatabase.rawQuery(a,null);
         cusor.moveToFirst();
         while(!cusor.isAfterLast()){
-            String sotaikhoan = cusor.getString(cusor.getColumnIndex(ThuChi.table_STK));
+            String sotaikhoan = cusor.getString(cusor.getColumnIndex(ThuChi.TABLE_STK));
             dsnv.add(sotaikhoan);
             cusor.moveToNext();
         }
@@ -108,11 +110,11 @@ public class BankControl {
 
     public ArrayList<String> laystk_vietcom(){
         ArrayList<String> dsnv = new ArrayList<String>();
-        String a = "select "+ ThuChi.table_STK0 +" from "+ ThuChi.TABLE_Viecombank;
+        String a = "select "+ ThuChi.TABLE_STK +" from "+ ThuChi.DB_BANK + " WHERE "+ ThuChi.TABLE_TYPE_BANK +" = 'VIETCOM';";
         Cursor cusor = sqLiteDatabase.rawQuery(a,null);
         cusor.moveToFirst();
         while(!cusor.isAfterLast()){
-            String sotaikhoan = cusor.getString(cusor.getColumnIndex(ThuChi.table_STK0));
+            String sotaikhoan = cusor.getString(cusor.getColumnIndex(ThuChi.TABLE_STK));
             dsnv.add(sotaikhoan);
             cusor.moveToNext();
         }
@@ -122,21 +124,22 @@ public class BankControl {
 
 
     public int check_id(String id) {
-        String a = "SELECT * FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_id_messger + " = '" + id + "' ;";
+        String a = "SELECT * FROM " + ThuChi.DB_BANK + " WHERE ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN' ) AND ("+ ThuChi.TABLE_ID_MESSGER +" = '"+ id +"');";
+
         Cursor cusor = sqLiteDatabase.rawQuery(a, null);
         int count = cusor.getCount();
         return count;
     }
 
     public int check_id_vietcom(String id) {
-        String a = "SELECT * FROM " + ThuChi.TABLE_Viecombank + " WHERE " + ThuChi.table_id_messger0 + " = '" + id + "' ;";
+        String a = "SELECT * FROM " + ThuChi.DB_BANK + " WHERE ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETCOM' ) AND ("+ ThuChi.TABLE_ID_MESSGER +" = '"+ id +"');";
         Cursor cusor = sqLiteDatabase.rawQuery(a, null);
         int count = cusor.getCount();
         return count;
     }
 
     public String gettien() {
-        String a = "SELECT "+ ThuChi.table_tien +" FROM " + ThuChi.TABLE_Vietinbank + " ;";
+        String a = "SELECT "+ ThuChi.TABLE_TIEN +" FROM " + ThuChi.DB_BANK + " WHERE "+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN';";
         Cursor c = sqLiteDatabase.rawQuery(a, null);
         String count;
         if (c.moveToLast()) {
@@ -148,7 +151,7 @@ public class BankControl {
         return count;
     }
     public String gettien_vietcom() {
-        String a = "SELECT "+ ThuChi.table_tien0 +" FROM " + ThuChi.TABLE_Viecombank + " ;";
+        String a = "SELECT "+ ThuChi.TABLE_TIEN +" FROM " + ThuChi.DB_BANK + " WHERE "+ ThuChi.TABLE_TYPE_BANK +" = 'VIETCOM';";
         Cursor c = sqLiteDatabase.rawQuery(a, null);
         String count;
         if (c.moveToLast()) {
@@ -163,13 +166,13 @@ public class BankControl {
         int b = 0;
         String Tong_thu;
         if (month.equals("All")) {
-            Tong_thu = "SELECT SUM(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + " WHERE ("+ ThuChi.table_type +" = 'vao' ) AND ("+ ThuChi.table_STK +" = '"+ stk+"');";
+            Tong_thu = "SELECT SUM(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + " WHERE ("+ ThuChi.TABLE_TYPE +" = 'vao' ) AND ("+ ThuChi.TABLE_STK +" = '"+ stk+"') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
         } else {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             String da1 = year + "-" + month + "-00" ;
             String da2 = year + "-" + month + "-32" ;
-            Tong_thu = "SELECT SUM(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank  + " WHERE (" + ThuChi.table_type +" = 'vao') AND ("+ ThuChi.table_ngay + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.table_STK+" = '"+stk+"');";
+            Tong_thu = "SELECT SUM(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK  + " WHERE (" + ThuChi.TABLE_TYPE +" = 'vao') AND ("+ ThuChi.TABLE_NGAY4 + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.TABLE_STK+" = '"+stk+"') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
         }
 
         Cursor c = sqLiteDatabase.rawQuery(Tong_thu, null);
@@ -186,14 +189,14 @@ public class BankControl {
         int b = 0;
         String Tong_thu;
         if (month.equals("All")) {
-            Tong_thu = "SELECT SUM(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + " WHERE ("+ ThuChi.table_type +" = 'ra' ) AND ("+ ThuChi.table_STK +" = '"+ stk +"');";
+            Tong_thu = "SELECT SUM(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + " WHERE ("+ ThuChi.TABLE_TYPE +" = 'ra' ) AND ("+ ThuChi.TABLE_STK +" = '"+ stk +"') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
 
         } else {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             String da1 = year + "-" + month + "-00" ;
             String da2 = year + "-" + month + "-32" ;
-            Tong_thu = "SELECT SUM(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank  + " WHERE (" + ThuChi.table_type +" = 'ra') AND ("+ ThuChi.table_ngay + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.table_STK+" = '"+stk+"');";
+            Tong_thu = "SELECT SUM(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK  + " WHERE (" + ThuChi.TABLE_TYPE +" = 'ra') AND ("+ ThuChi.TABLE_NGAY4 + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.TABLE_STK+" = '"+stk+"') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
         }
 
        Cursor c = sqLiteDatabase.rawQuery(Tong_thu, null);
@@ -210,13 +213,13 @@ public class BankControl {
         int b = 0;
         String Tong_thu;
         if (month.equals("All")) {
-            Tong_thu = "SELECT SUM(" + ThuChi.table_tienbienthien0 + ") FROM " + ThuChi.TABLE_Viecombank+ " WHERE ("+ ThuChi.table_type0 +" = 'vao' ) AND ("+ ThuChi.table_STK0 +" = '"+ stk+"');";
+            Tong_thu = "SELECT SUM(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK+ " WHERE ("+ ThuChi.TABLE_TYPE +" = 'vao' ) AND ("+ ThuChi.TABLE_STK +" = '"+ stk+"') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
         } else {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             String da1 = year + "-" + month + "-00";
             String da2 = year + "-" + month + "-32";
-            Tong_thu = "SELECT SUM(" + ThuChi.table_tienbienthien0 + ") FROM " + ThuChi.TABLE_Viecombank  + " WHERE (" + ThuChi.table_type0 +" = 'vao') AND ("+ ThuChi.table_ngay0 +" BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.table_STK0+" = '"+stk+"');";
+            Tong_thu = "SELECT SUM(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK  + " WHERE (" + ThuChi.TABLE_TYPE +" = 'vao') AND ("+ ThuChi.TABLE_NGAY4 +" BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.TABLE_STK+" = '"+stk+"') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
         }
 
         Cursor c = sqLiteDatabase.rawQuery(Tong_thu, null);
@@ -233,14 +236,14 @@ public class BankControl {
         int b = 0;
         String Tong_thu;
         if (month.equals("All")) {
-            Tong_thu = "SELECT SUM(" + ThuChi.table_tienbienthien0 + ") FROM " + ThuChi.TABLE_Viecombank + " WHERE ("+ ThuChi.table_type0 +" = 'ra' ) AND ("+ ThuChi.table_STK0 +" = '"+ stk +"');";
+            Tong_thu = "SELECT SUM(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + " WHERE ("+ ThuChi.TABLE_TYPE +" = 'ra' ) AND ("+ ThuChi.TABLE_STK +" = '"+ stk +"') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
 
         } else {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             String da1 = year + "-" + month + "-00";
             String da2 = year + "-" + month + "-32";
-            Tong_thu = "SELECT SUM(" + ThuChi.table_tienbienthien0 + ") FROM " + ThuChi.TABLE_Viecombank  + " WHERE (" + ThuChi.table_type0 +" = 'ra') AND ("+ ThuChi.table_ngay0 + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.table_STK0+" = '"+stk+"');";
+            Tong_thu = "SELECT SUM(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK  + " WHERE (" + ThuChi.TABLE_TYPE +" = 'ra') AND ("+ ThuChi.TABLE_NGAY4 + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.TABLE_STK+" = '"+stk+"') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
         }
 
         Cursor c = sqLiteDatabase.rawQuery(Tong_thu, null);
@@ -257,15 +260,15 @@ public class BankControl {
         String cd;
         String Tong_chi, Tong_chi0;
         if (month.equals("All")) {
-            Tong_chi = "SELECT " + ThuChi.table_lydo + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + " =( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + " WHERE "+ ThuChi.table_type+" = 'vao');";
-            Tong_chi0 = "SELECT " + ThuChi.table_ngay + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + " =( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + " WHERE "+ ThuChi.table_type+" = 'vao');";
+            Tong_chi = "SELECT " + ThuChi.TABLE_LYDO + " FROM " + ThuChi.DB_BANK + "  WHERE ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN' ) AND ("+ ThuChi.TABLE_TIENBIENTHIEN + " =( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + " WHERE "+ ThuChi.TABLE_TYPE+" = 'vao'));";
+            Tong_chi0 = "SELECT " + ThuChi.TABLE_NGAY4 + " FROM " + ThuChi.DB_BANK + " WHERE ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN' ) AND ("+ ThuChi.TABLE_TIENBIENTHIEN + " =( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + " WHERE "+ ThuChi.TABLE_TYPE+" = 'vao'));";
         } else {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             String da1 = "00-"+ month + "-" +year+ " 00:00" ;
             String da2 = "32-"+ month + "-" +year + " 00:00" ;
-            Tong_chi = "SELECT " + ThuChi.table_lydo + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + "=( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + ") AND (" + ThuChi.table_ngay + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.table_type+" = 'vao');";
-            Tong_chi0 = "SELECT " + ThuChi.table_ngay + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + "=( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + ") AND (" + ThuChi.table_ngay + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.table_type+" = 'vao');";
+            Tong_chi = "SELECT " + ThuChi.TABLE_LYDO + " FROM " + ThuChi.DB_BANK + " WHERE " + ThuChi.TABLE_TIENBIENTHIEN + "=( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + ") AND (" + ThuChi.TABLE_NGAY4 + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.TABLE_TYPE+" = 'vao') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
+            Tong_chi0 = "SELECT " + ThuChi.TABLE_NGAY4 + " FROM " + ThuChi.DB_BANK + " WHERE " + ThuChi.TABLE_TIENBIENTHIEN + "=( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + ") AND (" + ThuChi.TABLE_NGAY4 + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.TABLE_TYPE+" = 'vao') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
         }
         Cursor c = sqLiteDatabase.rawQuery(Tong_chi, null);
         Cursor c0 = sqLiteDatabase.rawQuery(Tong_chi0, null);
@@ -283,15 +286,16 @@ public class BankControl {
         String cd;
         String Tong_chi, Tong_chi0;
         if (month.equals("All")) {
-            Tong_chi = "SELECT " + ThuChi.table_lydo + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + " =( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + " WHERE "+ ThuChi.table_type+" = 'ra');";
-            Tong_chi0 = "SELECT " + ThuChi.table_ngay + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + " =( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + " WHERE "+ ThuChi.table_type+" = 'ra');";
+            Tong_chi = "SELECT " + ThuChi.TABLE_LYDO + " FROM " + ThuChi.DB_BANK + "  WHERE ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETCOM' ) AND ("+ ThuChi.TABLE_TIENBIENTHIEN + " =( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + " WHERE "+ ThuChi.TABLE_TYPE+" = 'ra'));";
+            Tong_chi0 = "SELECT " + ThuChi.TABLE_NGAY4 + " FROM " + ThuChi.DB_BANK + "  WHERE ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETCOM' ) AND ("+ ThuChi.TABLE_TIENBIENTHIEN + " =( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + " WHERE "+ ThuChi.TABLE_TYPE+" = 'ra'));";
         } else {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             String da1 = "00-"+ month + "-" +year+ " 00:00" ;
             String da2 = "32-"+ month + "-" +year + " 00:00" ;
-            Tong_chi = "SELECT " + ThuChi.table_lydo + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + "=( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + ") AND (" + ThuChi.table_ngay + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.table_type+" = 'ra');";
-            Tong_chi0 = "SELECT " + ThuChi.table_ngay + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + "=( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + ") AND (" + ThuChi.table_ngay + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.table_type+" = 'ra');";
+            Tong_chi = "SELECT " + ThuChi.TABLE_LYDO + " FROM " + ThuChi.DB_BANK + " WHERE " + ThuChi.TABLE_TIENBIENTHIEN + "=( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + ") AND (" + ThuChi.TABLE_NGAY4 + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.TABLE_TYPE+" = 'ra') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
+            Tong_chi0 = "SELECT " + ThuChi.TABLE_NGAY4 + " FROM " + ThuChi.DB_BANK + " WHERE " + ThuChi.TABLE_TIENBIENTHIEN + "=( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + ") AND (" + ThuChi.TABLE_NGAY4 + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.TABLE_TYPE+" = 'ra') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
+
         }
         Cursor c = sqLiteDatabase.rawQuery(Tong_chi, null);
         Cursor c0 = sqLiteDatabase.rawQuery(Tong_chi0, null);
@@ -310,13 +314,13 @@ public class BankControl {
         int cd;
         String Tong_chi;
         if (month.equals("All")) {
-            Tong_chi = "SELECT " + ThuChi.table_tienbienthien + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + "=( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + " WHERE "+ ThuChi.table_type +" = 'ra');";
+            Tong_chi = "SELECT " + ThuChi.TABLE_TIENBIENTHIEN + " FROM " + ThuChi.DB_BANK +" WHERE ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN' ) AND ("+ ThuChi.TABLE_TIENBIENTHIEN + " =( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + " WHERE "+ ThuChi.TABLE_TYPE+" = 'ra'));";
         } else {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             String da1 = year + "-" + month + "-00";
             String da2 = year + "-" + month + "-32";
-            Tong_chi = "SELECT " + ThuChi.table_tienbienthien + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + "=( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + ") AND (" + ThuChi.table_ngay + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.table_type +" = 'ra');";
+            Tong_chi = "SELECT " + ThuChi.TABLE_TIENBIENTHIEN + " FROM " + ThuChi.DB_BANK + " WHERE " + ThuChi.TABLE_TIENBIENTHIEN + "=( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + ") AND (" + ThuChi.TABLE_NGAY4 + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.TABLE_TYPE +" = 'ra') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN');";
         }
         Cursor c = sqLiteDatabase.rawQuery(Tong_chi, null);
         if (c.moveToFirst()) {
@@ -331,13 +335,13 @@ public class BankControl {
         int cd;
         String Tong_chi;
         if (month.equals("All")) {
-            Tong_chi = "SELECT " + ThuChi.table_tienbienthien + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + "=( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + " WHERE "+ ThuChi.table_type +" = 'vao');";
+            Tong_chi = "SELECT " + ThuChi.TABLE_TIENBIENTHIEN + " FROM " + ThuChi.DB_BANK +" WHERE ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETIN' ) AND ("+ ThuChi.TABLE_TIENBIENTHIEN + " =( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + " WHERE "+ ThuChi.TABLE_TYPE+" = 'vao'));";
         } else {
             Calendar calendar = Calendar.getInstance();
             int year = calendar.get(Calendar.YEAR);
             String da1 = year + "-" + month + "-00";
             String da2 = year + "-" + month + "-32";
-            Tong_chi = "SELECT " + ThuChi.table_tienbienthien + " FROM " + ThuChi.TABLE_Vietinbank + " WHERE " + ThuChi.table_tienbienthien + "=( SELECT max(" + ThuChi.table_tienbienthien + ") FROM " + ThuChi.TABLE_Vietinbank + ") AND (" + ThuChi.table_ngay + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.table_type +" = 'vao');";
+            Tong_chi = "SELECT " + ThuChi.TABLE_TIENBIENTHIEN + " FROM " + ThuChi.DB_BANK + " WHERE " + ThuChi.TABLE_TIENBIENTHIEN + "=( SELECT max(" + ThuChi.TABLE_TIENBIENTHIEN + ") FROM " + ThuChi.DB_BANK + ") AND (" + ThuChi.TABLE_NGAY4 + " BETWEEN '" + da1 + "' AND '" + da2 + "') AND ("+ ThuChi.TABLE_TYPE +" = 'vao') AND ("+ ThuChi.TABLE_TYPE_BANK +" = 'VIETCOM');";
         }
         Cursor c = sqLiteDatabase.rawQuery(Tong_chi, null);
         if (c.moveToFirst()) {

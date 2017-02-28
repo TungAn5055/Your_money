@@ -36,25 +36,17 @@ public class ThuChi extends SQLiteOpenHelper {
     public static String TABLE_GHICHU3 = "ghichu2";
 
 
-    public static String TABLE_Vietinbank = "Vietinbank";
+    public static String DB_BANK = "Vietinbank";
     public static String TABLE_ID4 = "_id";
-    public static String table_STK = "SoTaiKhoan";
-    public static String table_tien = "Tien";
-    public static String table_id_messger = "idmess";
-    public static String table_ngay = "ngay";
-    public static String table_tienbienthien = "tienbienthien";
-    public static String table_lydo = "lydo";
-    public static String table_type = "type";
+    public static String TABLE_TYPE_BANK = "type_bank";
+    public static String TABLE_STK = "SoTaiKhoan";
+    public static String TABLE_TIEN = "Tien";
+    public static String TABLE_ID_MESSGER = "idmess";
+    public static String TABLE_NGAY4 =  "ngay";
+    public static String TABLE_TIENBIENTHIEN= "tienbienthien";
+    public static String TABLE_LYDO = "lydo";
+    public static String TABLE_TYPE = "type";
 
-    public static String TABLE_Viecombank = "Viecombank";
-    public static String TABLE_ID5 = "_id";
-    public static String table_STK0 = "SoTaiKhoan0";
-    public static String table_tien0 = "Tien0";
-    public static String table_id_messger0 = "idmess0";
-    public static String table_ngay0 = "ngay0";
-    public static String table_tienbienthien0 = "tienbienthien0";
-    public static String table_lydo0 = "lydo0";
-    public static String table_type0 = "type0";
 
     public static String DB_TABLE_IMAGE = "tblimage";
     public static String IMAGE_ID = "_id4";
@@ -117,22 +109,19 @@ public class ThuChi extends SQLiteOpenHelper {
         String taoBang = "CREATE TABLE " + DB_TABLETHUCHI + "(" + TABLE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + TABLE_SOTIEN + " INTEGER," + TABLE_TENKHOAN + " TEXT," + TABLE_NGAY + " DATE," + TABLE_GHICHU + " TEXT," + IMAGE_SOURCE1 + " TEXT);";
         String taoBang2 = "CREATE TABLE " + DB_TABLETHUCHI2 + "(" + TABLE_ID2 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TABLE_SOTIEN2 + " INTEGER," + TABLE_TENKHOAN2 + " TEXT," + TABLE_NGAY2 + " DATE," + TABLE_GHICHU2 + " TEXT," + IMAGE_SOURCE2 + " TEXT);";
         String taoBang3 = "CREATE TABLE " + DB_TABLETHUCHI3 + "(" + TABLE_ID3 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TABLE_SOTIEN3 + " INTEGER," + TABLE_TENKHOAN3 + " TEXT," + TABLE_NGAY3 + " DATE," + TABLE_GHICHU3 + " TEXT);";
-        String taoBang4 = "CREATE TABLE " + TABLE_Vietinbank + "(" + TABLE_ID4 + " INTEGER PRIMARY KEY AUTOINCREMENT," + table_STK + " TEXT," + table_id_messger + " TEXT," + table_tien + " INTEGER," + table_ngay + " DATE," + table_tienbienthien + " INTEGER," + table_lydo + " TEXT," + table_type + " TEXT);";
-        String taoBang5 = "CREATE TABLE " + TABLE_Viecombank + "(" + TABLE_ID5 + " INTEGER PRIMARY KEY AUTOINCREMENT," + table_STK0 + " TEXT," + table_id_messger0 + " TEXT," + table_tien0 + " INTEGER," + table_ngay0 + " DATE," + table_tienbienthien0 + " INTEGER," + table_lydo0 + " TEXT," + table_type0 + " TEXT);";
-        String taoBang6 = "CREATE TABLE " + DB_TABLE_IMAGE + "(" + IMAGE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + IMAGE_NAME + " INTEGER," + IMAGE_SOURCE + " TEXT);";
+        String taoBang4 = "CREATE TABLE " + DB_BANK + "(" + TABLE_ID4 + " INTEGER PRIMARY KEY AUTOINCREMENT," + TABLE_TYPE_BANK + " TEXT,"+ TABLE_STK + " TEXT," + TABLE_ID_MESSGER + " TEXT," + TABLE_TIEN + " INTEGER," + TABLE_NGAY4 + " DATE," + TABLE_TIENBIENTHIEN + " INTEGER," + TABLE_LYDO + " TEXT," + TABLE_TYPE + " TEXT);";
+        String taoBang5 = "CREATE TABLE " + DB_TABLE_IMAGE + "(" + IMAGE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + IMAGE_NAME + " INTEGER," + IMAGE_SOURCE + " TEXT);";
 
         db.execSQL(taoBang);
         db.execSQL(taoBang2);
         db.execSQL(taoBang3);
         db.execSQL(taoBang4);
         db.execSQL(taoBang5);
-        db.execSQL(taoBang6);
 
         for (int i = 0; i <= imageId.length - 1; i++) {
             String Insert_Data = "INSERT INTO  " + DB_TABLE_IMAGE + " (_id4, image_name, image_source) VALUES(" + i + ",'" + name[i] + "','" + imageId[i] + "')";
             db.execSQL(Insert_Data);
         }
-
     }
 
     @Override
@@ -141,7 +130,6 @@ public class ThuChi extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXITS " + TABLE_ID2);
         db.execSQL("DROP TABLE IF EXITS " + TABLE_ID3);
         db.execSQL("DROP TABLE IF EXITS " + TABLE_ID4);
-        db.execSQL("DROP TABLE IF EXITS " + TABLE_ID5);
         db.execSQL("DROP TABLE IF EXITS " + IMAGE_ID);
         onCreate(db);
     }
