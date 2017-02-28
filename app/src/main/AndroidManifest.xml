@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.tungan5055.yourmoney">
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name = "android.permission.READ_CALL_LOG" />
+  <!--  <uses-permission-sdk-23 android:name="android.permission.READ_SMS"/>-->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="YourMoney"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:configChanges="locale">
+        <activity
+            android:name=".MainActivity"
+            android:label="YourMoney"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Thu_Chi_No.Layout_add"/>
+        <activity android:name=".Thu_Chi_No.Layout_add_chi"/>
+        <activity android:name=".Thu_Chi_No.Layout_add_khoanno"/>
+        <activity android:name=".Thu_Chi_No.layout_thu_chi"/>
+        <activity android:name=".SoNo.Layout_sono"/>
+        <activity android:name=".Report.Layout_Baocao"/>
+        <activity android:name=".Report.Layout_Baocao_Bank"/>
+        <activity android:name=".Suggest.layout_goiy"/>
+        <activity android:name=".Bank.layout_select_bank"/>
+        <activity android:name=".Image.layout_list_item"/>
+        <activity android:name=".Image.layout_list_item_new"/>
+        <activity android:name=".Image.layoutGridview"/>
+        <activity android:name=".Report.layout_details_bank"/>
+        <activity android:name=".Report.layout_details_bank0"/>
+        <activity android:name=".Report.Layout_Baocao_Bank_VietCombank"/>
+        <activity android:name=".Search.Layout_search"/>
+        <activity android:name=".Bank.layout_select_tknh_viettinbank"/>
+        <activity android:name=".Bank.layout_select_tknh_vietcombank"/>
+        <activity android:name=".Bank.Layout_bank_vietinbank"/>
+        <activity android:name=".Bank.Layout_bank_vietcombank"/>
+        <activity android:name=".Edit.layout_edit_add"/>
+    </application>
+
+</manifest>

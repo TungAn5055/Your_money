@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/abc0"
+        android:title="Cài đặt"></item>
+    <item
+        android:id="@+id/abc1"
+        android:title="Ngôn ngữ"></item>
+    <item
+        android:id="@+id/me_hotro"
+        android:title="Hỗ trợ"></item>
+    <item
+        android:id="@+id/me_gioithieu"
+        android:title=" Giới thiệu"></item>
+    <item
+        android:id="@+id/abc2"
+        android:title="Tùy chọn"></item>
+
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="200"
+        android:title="Search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always"/>
+
+</menu>

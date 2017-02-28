@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:text="TÌM KIẾM"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:fontFamily="monospace"
+        android:textSize="45sp"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimaryDark"
+        android:layout_weight="0.06" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="139dp"
+        android:weightSum="1"
+        android:layout_weight="0.13">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="187dp"
+            android:layout_height="match_parent"
+            android:weightSum="1"
+            android:background="@drawable/selecter_search"
+            android:layout_weight="1">
+
+            <TextView
+                android:text="Loại giao dịch:"
+                android:layout_width="fill_parent"
+                android:id="@+id/textView21"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="@color/accent_dark"
+                android:textSize="30sp"
+               />
+
+            <CheckBox
+                android:text="Khoản thu"
+                android:layout_width="match_parent"
+                android:id="@+id/chkhoanthu"
+                android:textSize="25sp"
+                android:layout_height="37dp" />
+
+            <CheckBox
+                android:text="Khoản chi"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:id="@+id/chkhoanchi"
+                android:textSize="25sp" />
+
+            <CheckBox
+                android:text="Khoản nợ"
+                android:layout_width="match_parent"
+                android:id="@+id/chkhoanno"
+                android:layout_height="37dp"
+                android:textSize="25sp" />
+
+            <CheckBox
+                android:text="Bank"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:id="@+id/chbank"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/selecter_search"
+           >
+
+            <TextView
+                android:text="Tìm kiếm theo : "
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/textView23"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="@color/accent_dark"
+                android:textSize="30sp"
+             />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <RadioButton
+                    android:text="Ngày tháng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/rangaythang"
+                    android:layout_weight="1"
+                    android:textSize="25sp" />
+
+                <RadioButton
+                    android:checked="false"
+                    android:text="Tên"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/raten"
+                    android:layout_weight="1"
+                    android:textSize="25sp" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_weight="0.09"
+        android:background="@drawable/selecter_search0"
+        android:gravity="center">
+
+        <FrameLayout
+            android:layout_width="259dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.58">
+
+            <Button
+                android:text="Chọn ngày"
+                android:layout_width="259dp"
+                android:layout_height="match_parent"
+                android:id="@+id/btndate" />
+
+            <EditText
+                android:layout_width="261dp"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/editText2"
+                android:layout_weight="1"
+                android:hint="Tìm kiếm ..."
+                android:textAlignment="center"
+                android:gravity="center" />
+        </FrameLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_searchooo"
+            android:id="@+id/btnsearch"
+            android:padding="15dp"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:gravity="center"
+            android:layout_weight="0.08" />
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:id="@+id/listView"
+        android:layout_weight="0.52"
+        android:background="@drawable/selecter_search0"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.16">
+
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            fab:fab_addButtonColorPressed="@color/accent_dark"
+            fab:fab_addButtonPlusIconColor="@color/white"
+            fab:fab_addButtonStrokeVisible="true"
+            fab:fab_labelStyle="@style/menu_labels_style"
+            fab:fab_labelsPosition="left"
+            fab:fab_icon="@drawable/icon_home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/selecter_search0"></com.getbase.floatingactionbutton.FloatingActionButton>
+
+    </GridLayout>
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:background="#ff3d00"
+        android:layout_weight="0.10"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="107dp"
+            android:background="#ff3d00"
+            android:drawableLeft="@drawable/ic_back"
+            android:id="@+id/btnback"
+            android:layout_weight="1.60" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:fontFamily="monospace"
+            android:textSize="55sp"
+            android:textColor="#FAFAFA"
+            android:background="#ff3d00"
+            android:text="Nhóm mới"
+            android:layout_gravity="center"
+            android:elevation="1dp"
+            android:gravity="fill"
+            android:layout_marginLeft="40dp"/>
+    </LinearLayout>
+    <GridView
+        android:id="@+id/grid"
+        android:layout_width="wrap_content"
+        android:layout_height="286dp"
+        android:layout_weight="0.77"
+        android:numColumns="3"/>
+
+</LinearLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="78dp"
+        android:weightSum="1"
+        android:background="@color/colorPrimary"
+        android:layout_weight="0.06">
+
+        <TextView
+            android:layout_width="296dp"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Thêm khoản thu"
+            android:id="@+id/textView"
+            android:ems="10"
+            android:textColor="#FAFAFA"
+            android:textIsSelectable="false"
+            android:textStyle="normal"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_weight="1.27"
+            android:textSize="50sp" />
+
+        <Button
+            android:layout_width="212dp"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/ic_delete"
+            android:id="@+id/btnexit"
+            android:background="#FF3D00" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="78dp"
+        android:weightSum="1"
+        android:background="#ffffff"
+        android:layout_weight="0.16">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="135dp"
+            android:ems="10"
+            android:id="@+id/edittien"
+            android:hint=" Nhập vào số tiền..."
+            android:textSize="45sp"
+            android:gravity="fill_vertical|center_horizontal"
+            android:inputType="number"
+            android:layout_weight="0.75" />
+
+        <TextView
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=".đ"
+            android:id="@+id/textView3"
+            android:gravity="fill_vertical|center_horizontal"
+            android:textSize="50sp"
+            android:textColor="#1dc707"
+            android:layout_weight="0.16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_weight="0.04">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="135dp"
+            android:id="@+id/click">
+
+            <Button
+                android:layout_width="167dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_add_image"
+                android:id="@+id/btnnhom"
+                android:layout_gravity="center"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="  Chọn nhóm"
+                android:textSize="40sp"
+                android:id="@+id/edittenkhoan"
+                android:layout_row="2"
+                android:layout_column="9"
+                android:gravity="center_vertical" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:id="@+id/btndate0"
+        android:layout_weight="0.05">
+
+        <Button
+            android:layout_width="165dp"
+            android:layout_height="141dp"
+            android:id="@+id/btndate"
+            android:background="@drawable/ic_cala"
+            android:layout_gravity="center" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:id="@+id/editdate"
+            android:hint="  Hôm nay"
+            android:textSize="40sp"
+            android:inputType="date"
+            android:layout_row="0"
+            android:layout_column="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_weight="0.19">
+
+        <ImageView
+            android:layout_width="169dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView3"
+            android:background="@drawable/ic_ghichu"
+            android:layout_gravity="center" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="167dp"
+                android:hint="  Ghi chú..."
+                android:textSize="40sp"
+                android:id="@+id/editghichu"
+                android:layout_row="3"
+                android:layout_column="2"
+                android:textColor="#080808" />
+        </GridLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:id="@+id/btnok"
+        android:text="Xong"
+        android:textSize="60sp"
+        android:textColor="@color/colorPrimary"
+        android:background="#fefefe"
+        android:textStyle="normal"
+        android:layout_weight="0.18" />
+
+</LinearLayout>

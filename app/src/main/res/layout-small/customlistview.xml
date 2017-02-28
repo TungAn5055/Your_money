@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textStyle="bold"
+    android:weightSum="1">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="58dp"
+        android:radius = "5dp"
+        android:background="@drawable/selecter0"
+        android:layout_weight="0.02">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/ic_khaonthu"
+            android:padding="5dp"
+            android:paddingBottom="5dp"
+            android:paddingEnd="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingStart="5dp"
+            android:paddingTop="5dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="0dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="114dp"
+                    android:layout_height="35dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/txtsotien"
+                    android:textSize="20dp"
+                    android:gravity="fill_vertical|center_horizontal"
+                    android:text="1,000,000"
+                    android:textColor="#17be04"
+                    android:layout_weight="1.00" />
+
+                <TextView
+                    android:layout_width="56dp"
+                    android:layout_height="match_parent"
+                    android:text=".đ"
+                    android:id="@+id/textView8"
+                    android:textColor="#17be04"
+                    android:textSize="20dp"
+                    android:gravity="fill_vertical|center_horizontal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="124dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/txttenkhoanthu"
+                    android:textSize="18dp"
+                    android:text="linh luong"
+                    android:layout_gravity="top|bottom"
+                    android:gravity="fill_vertical|center_horizontal"
+                    android:paddingLeft="0dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/txtngaythang"
+                    android:textSize="18dp"
+                    android:text="10/05/2016"
+                    android:gravity="fill_vertical|center_horizontal" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

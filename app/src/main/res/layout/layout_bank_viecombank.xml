@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:id="@+id/MainLayout"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="#FF3D00"
+       >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="VietcomBank :"
+            android:id="@+id/textView6"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#f8f3f2"
+            android:textSize="24dp"
+            android:background="#FF3D00"
+            android:textAlignment="center"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/txtnametk"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:layout_weight="0.02" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/txtsd"
+        android:layout_gravity="center_horizontal"
+        android:text="vietinbank"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="#17be04"
+        android:background="@drawable/selecter_kqthuchi" />
+
+    <ListView android:id="@+id/SMSList"
+        android:layout_height="286dp"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_weight="0.03" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.09">
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            fab:fab_addButtonColorPressed="@color/accent_dark"
+            fab:fab_addButtonPlusIconColor="@color/white"
+            fab:fab_addButtonStrokeVisible="true"
+            fab:fab_labelStyle="@style/menu_labels_style"
+            fab:fab_labelsPosition="left"
+            fab:fab_icon="@drawable/icon_home"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"></com.getbase.floatingactionbutton.FloatingActionButton>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_baocao"
+            fab:fab_icon="@drawable/ic_chitiet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"
+            fab:fab_addButtonColorPressed="@color/accent_dark"
+            fab:fab_addButtonPlusIconColor="@color/white"
+            fab:fab_addButtonStrokeVisible="true"
+            fab:fab_labelStyle="@style/menu_labels_style"
+            fab:fab_labelsPosition="left"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"></com.getbase.floatingactionbutton.FloatingActionButton>
+
+    </GridLayout>
+
+</LinearLayout>

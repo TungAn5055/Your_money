@@ -1,0 +1,92 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ff3d00"
+            android:weightSum="1"
+            android:layout_weight="0.06">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="179dp"
+                android:background="#ff3d00"
+                android:drawableLeft="@drawable/ic_back"
+                android:id="@+id/btnback"
+                android:layout_weight="0.22" />
+
+            <TextView
+                android:layout_width="113dp"
+                android:layout_height="116dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:fontFamily="monospace"
+                android:textSize="50sp"
+                android:textColor="#FAFAFA"
+                android:background="#ff3d00"
+                android:text="Nhóm mới"
+                android:layout_gravity="center"
+                android:elevation="1dp"
+                android:gravity="fill"
+                android:layout_marginLeft="40dp"
+                android:layout_weight="0.46" />
+
+            <Button
+                android:layout_width="135dp"
+                android:layout_height="match_parent"
+                android:background="#ff3d00"
+                android:id="@+id/btndone"
+                android:text="Done"
+                android:textSize="50sp"
+                android:layout_weight="0.39" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="134dp"
+            android:weightSum="1">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="163dp"
+                android:background="@drawable/ic_add_image"
+                android:id="@+id/imgbtn"
+                android:layout_weight="1.00" />
+
+            <EditText
+                android:layout_width="487dp"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:text="Name"
+                android:ems="10"
+                android:id="@+id/editText0"
+                android:textSize="40sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

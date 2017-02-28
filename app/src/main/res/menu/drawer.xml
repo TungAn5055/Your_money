@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/tknh"
+            android:icon="@drawable/ic_nganhang"
+            android:title="Tài khoản ngân hàng" />
+        <item
+            android:id="@+id/baocao"
+            android:icon="@drawable/ic_baocao"
+            android:title="Báo cáo" />
+        <item
+            android:id="@+id/search"
+            android:icon="@drawable/ic_searchooo"
+            android:title="Tìm kiếm" />
+        <item
+            android:id="@+id/sono"
+            android:icon="@drawable/ic_sonokkk"
+            android:title="Sổ nợ" />
+        <item
+            android:id="@+id/thuchi"
+            android:icon="@drawable/ic_thuchiooo"
+            android:title="Sổ giao dịch" />
+
+        <item
+            android:id="@+id/goiy"
+            android:icon="@drawable/ic_chuyengia"
+            android:title="Gợi ý tự chuyên gia" />
+
+        <item
+            android:id="@+id/home"
+            android:checked="true"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+    </group>
+    <!--<item android:title="">-->
+    <item android:title="">
+    <menu>
+        <item
+            android:id="@+id/hotro"
+            android:icon="@drawable/ic_b"
+            android:title="Hỗ trợ" />
+        <item
+            android:icon="@drawable/ic_caidat"
+            android:title="Cài đặt" />
+        <item
+            android:icon="@drawable/ic_gioithieu"
+            android:title="Giới thiệu" />
+        </menu>
+            </item>
+</menu>

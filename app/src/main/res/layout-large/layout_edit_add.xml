@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="78dp"
+        android:weightSum="1"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="526dp"
+            android:layout_height="83dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Sửa khoản"
+            android:id="@+id/textView"
+            android:ems="10"
+            android:textColor="#FAFAFA"
+            android:textIsSelectable="false"
+            android:textStyle="normal"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical|fill_vertical"
+            android:textSize="50sp"
+            android:textAlignment="center" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/ic_delete"
+            android:id="@+id/btnexit"
+            android:background="#FF3D00" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="78dp"
+        android:weightSum="1"
+        android:background="#ffffff"
+        android:layout_weight="0.04">
+
+        <EditText
+            android:layout_width="255dp"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:id="@+id/edittien"
+            android:hint=" Nhập vào số tiền..."
+            android:textSize="35sp"
+            android:gravity="fill_vertical|center_horizontal"
+            android:inputType="number"
+            android:layout_weight="0.91" />
+
+        <TextView
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=".đ"
+            android:id="@+id/textView3"
+            android:gravity="fill_vertical|center_horizontal"
+            android:textSize="35dp"
+            android:textColor="#1dc707" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_weight="0.01">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="117dp"
+            android:id="@+id/click">
+
+            <Button
+                android:layout_width="113dp"
+                android:layout_height="101dp"
+                android:background="@drawable/ic_add_image"
+                android:id="@+id/btnnhom" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="  Chọn nhóm"
+                android:id="@+id/edittenkhoan"
+                android:layout_row="2"
+                android:layout_column="9"
+                android:textSize="35sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_weight="0.02">
+
+        <Button
+            android:layout_width="115dp"
+            android:layout_height="122dp"
+            android:id="@+id/btndate"
+            android:background="@drawable/ic_cala" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="114dp"
+                android:id="@+id/editdate"
+                android:hint="  Hôm nay"
+                android:layout_weight="0.79"
+                android:inputType="date"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:textSize="35sp" />
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:layout_weight="0.16">
+
+        <ImageView
+            android:layout_width="115dp"
+            android:layout_height="107dp"
+            android:id="@+id/imageView3"
+            android:background="@drawable/ic_ghichu"/>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="121dp"
+                android:hint="  Ghi chú..."
+                android:id="@+id/editghichu"
+                android:layout_row="3"
+                android:layout_column="2"
+                android:textColor="#080808"
+                android:textSize="35sp" />
+        </GridLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnok"
+        android:text="Xong"
+        android:textColor="@color/colorPrimary"
+        android:background="#fefefe"
+        android:layout_weight="0.35"
+        android:textStyle="normal"
+        android:textSize="55sp" />
+
+</LinearLayout>
