@@ -203,7 +203,7 @@ public class Layout_add_chi extends FragmentActivity implements DatePickerDialog
 
     @Override
     public void onDateSet(DatePickerDialog datePickerDialog, int year, int month, int day) {
-        month = month - 1;
+        month = month + 1;
         String abc = + year + "-" + month + "-" + day;
         Toast.makeText(Layout_add_chi.this, abc, Toast.LENGTH_LONG).show();
         editDate0.setText(abc);
